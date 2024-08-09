@@ -1,0 +1,37 @@
+import java.util.*;
+public class sub_array {
+	public static void sub(ArrayList<Integer> list,int st,int end)
+	{
+		if(end==list.size())
+		{
+			return;
+		}
+		else if(st>end)
+		{
+			sub(list,0,end+1);
+		}
+		else
+		{
+			for(int i=st;i<=end;i++)
+			{
+				System.out.print(list.get(i)+" ");
+			}
+			System.out.println();
+			sub(list,st+1,end);
+		}
+	}
+		
+	public static void main(String args[])
+	{
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		ArrayList<Integer> list=new ArrayList<Integer>();
+		for(int i=0;i<n;i++)
+		{
+			list.add(s.nextInt());
+		}
+		int st=0;int end=0;
+		sub(list,st,end);
+	}
+
+}
